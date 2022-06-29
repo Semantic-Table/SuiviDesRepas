@@ -13,7 +13,6 @@ public class Repas {
     private Date date;
     private int ID_repas;
     private Time time;
-    private ArrayList<Aliments> aliments = new ArrayList<>();
 
     public Repas(Date date, Time time, int ID_repas) {
         this.date = date;
@@ -23,8 +22,8 @@ public class Repas {
 
 
 
-    public Repas(Date date, Time time) {
+   /* public Repas(Date date, Time time) {
         this.date = date;
         this.time = time;
-    }
+    }*/
 }

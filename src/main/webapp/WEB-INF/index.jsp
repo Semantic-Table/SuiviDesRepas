@@ -11,5 +11,16 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
+<main>
+    <article>
+        <h2>Introduction</h2>
+        <p>L'application suivi des repas</p>
+    </article>
+    <article>
+        <h2></h2>
+        <p></p>
+    </article>
+
+</main>
 </body>
 </html>

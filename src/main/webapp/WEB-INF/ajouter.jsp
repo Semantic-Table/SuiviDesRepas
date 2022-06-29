@@ -18,15 +18,29 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
+<main>
+    <form action="AddRepas" method="post">
+        <div class="champ">
+            <div class="label">
+                <label for="date">Date:</label>
+            </div>
+            <input id="date" name="date" type="date" required>
+        </div>
+        <div class="champ">
+            <div class="label">
+                <label for="time">Heure:</label>
+            </div>
+            <input id="time" name="time" type="time" required>
+        </div>
+        <div class="champ">
+            <div class="label">
+                <label for="repas">Aliments:</label>
+            </div>
+            <input id="repas" name="aliment" type="text" required>
+        </div>
+        <button type="submit">envoyer</button>
+    </form>
+</main>
 
-<form action="AddRepas" method="post">
-    <label for="date"></label>
-    <input id="date" name="date" type="date" required>
-    <label for="time"></label>
-    <input id="time" name="time" type="time" required>
-    <label for="repas"></label>
-    <input id="repas" name="aliment" type="text" required>
-    <button type="submit">envoyer</button>
-</form>
 </body>
 </html>

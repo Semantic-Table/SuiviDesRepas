@@ -18,27 +18,30 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
+<main>
+    <h2>Liste des repas enregistrer :</h2>
+    <table>
 
-<table>
+        <tr class="tabTitle">
+            <td id="DATE">DATE :</td>
+            <td>HEURE : </td>
+            <td id="ALIMENTS">ALIMENTS :</td>
+        </tr>
+        <c:forEach items="${repas}" var="repa">
+            <tr>
+                <td><c:out value="${repa.date}"/></td><td><c:out value="${repa.time}" /></td>
 
-    <tr>
-        <td>DATE :</td>
-        <td>HEURE : </td>
-        <td>ALIMENTS :</td>
-    </tr>
-<c:forEach items="${repas}" var="repa">
-    <tr>
-    <td><c:out value="${repa.date}"/></td><td><c:out value="${repa.time}" /></td>
+                <td>
+                    <c:forEach items="${aliments}" var="aliment">
+                        <c:if test="${repa.ID_repas == aliment.ID_repas}">
+                            <c:out value="${aliment.nom}" />,
+                        </c:if>
+                    </c:forEach>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+</main>
 
-        <td>
-            <c:forEach items="${aliments}" var="aliment">
-                <c:if test="${repa.ID_repas == aliment.ID_repas}">
-                    <c:out value="${aliment.nom}" />,
-                </c:if>
-            </c:forEach>
-        </td>
-    </tr>
-</c:forEach>
-</table>
 </body>
 </html>

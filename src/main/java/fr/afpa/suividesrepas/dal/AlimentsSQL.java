@@ -34,7 +34,8 @@ public class AlimentsSQL {
         try {
             Connection connection = ConnectionProvider.getConnection();
             PreparedStatement pstmt = connection.prepareStatement(
-                    "INSERT INTO aliments(nom,ID_repas) values(?,?)"
+                    "INSERT INTO aliments(nom) values(?,?);" +
+                            "insert into alimentsrepas(ID_aliments, ID_repas) VALUES (?,?);"
             );
             System.out.println(nom);
             System.out.println(ID_repas);

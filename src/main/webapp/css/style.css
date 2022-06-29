@@ -6,6 +6,12 @@
 
 h1{
     color: #4d994d;
+    width: 100%;
+    background: white;
+    height: 10vh;
+    margin: 0;
+    font-size: 40px;
+    text-align: center;
 }
 
 body {
@@ -16,14 +22,16 @@ body {
 }
 
 header {
-    width: 30vw;
-height: 100vh;
-    border-style: none solid none none;
-    border: black 1px;
-}
-nav {
+    position: fixed;
+    width: 20vw;
+    height:100vh;
+    border-right: solid #4d994d 2px;
     background: #4d994d;
-    height: 100vh;
+}
+main{
+    margin-left: 25vw;
+    padding-top: 100px;
+    width: 70vw;
 }
 
 ul a li {
@@ -57,3 +65,42 @@ ul a {
 ul a:hover {
     background: #368b36;
 }
+
+td{
+    border: black solid 1px;
+    height: 5vh;
+    width: 10vw;
+    padding-left: 10px;
+}
+table {
+    border-radius: 10px 0px;
+}
+.tabTitle {
+    background: #4d994d;
+    color: white;
+    border-radius: 10px 0px;
+}
+#DATE {
+    border-radius: 10px 0 0 0;
+}
+#ALIMENTS {
+    border-radius: 0 10px 0 0;
+}
+.champ {
+    width: 100%;
+}
+.label {
+    width: 50%;
+    padding: 10px 0 5px 5px;
+}
+input{
+    width: 50%;
+}
+form {
+    padding: 20px;
+    width: 30vw;
+    background: #4d994d;
+    color: white;
+    border-radius: 10px;
+}
+
