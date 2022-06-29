@@ -13,14 +13,51 @@ public class AlimentsSQL {
         try {
             Connection connection = ConnectionProvider.getConnection();
             PreparedStatement pstmt = connection.prepareStatement(
-                    "SELECT ID_aliments ,nom,ID_repas from aliments"
+                    "SELECT ID_aliments ,nom from aliments"
             );
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 aliments.add(new Aliments(
                         rs.getString("nom"),
-                        rs.getInt("ID_aliments"),
-                        rs.getInt("ID_repas")
+                        rs.getInt("ID_aliments")
+                ));
+            }
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("alimentrepas");
+        }
+        return aliments;
+    }
+
+    public void insert(String nom) {
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(
+                    "INSERT INTO aliments(nom) values(?);"
+            );
+            System.out.println(nom);
+            pstmt.setString(1, nom);
+            pstmt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public Aliments selectOne(String nom) {
+        ArrayList<Aliments> aliments = new ArrayList<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(
+                    "SELECT ID_aliments ,nom from aliments WHERE nom = ?"
+            );
+            pstmt.setString(1, nom);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                aliments.add(new Aliments(
+                        rs.getString("nom"),
+                        rs.getInt("ID_aliments")
                 ));
             }
             System.out.println(aliments.toString());
@@ -28,23 +65,12 @@ public class AlimentsSQL {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return aliments;
-    }
-    public void insert(String nom, int ID_repas) {
-        try {
-            Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement(
-                    "INSERT INTO aliments(nom) values(?,?);" +
-                            "insert into alimentsrepas(ID_aliments, ID_repas) VALUES (?,?);"
-            );
-            System.out.println(nom);
-            System.out.println(ID_repas);
-            pstmt.setString(1, nom);
-            pstmt.setString(2, String.valueOf(ID_repas));
-            pstmt.executeUpdate();
-            connection.close();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+        if (aliments.isEmpty()) {
+            return null;
+        } else {
+            return aliments.get(0);
         }
+
+
     }
 }

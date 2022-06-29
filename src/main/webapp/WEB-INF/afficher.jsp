@@ -24,17 +24,23 @@
 
         <tr class="tabTitle">
             <td id="DATE">DATE :</td>
-            <td>HEURE : </td>
+            <td>HEURE :</td>
             <td id="ALIMENTS">ALIMENTS :</td>
         </tr>
         <c:forEach items="${repas}" var="repa">
             <tr>
-                <td><c:out value="${repa.date}"/></td><td><c:out value="${repa.time}" /></td>
+                <td><c:out value="${repa.date}"/></td>
+                <td><c:out value="${repa.time}"/></td>
 
                 <td>
-                    <c:forEach items="${aliments}" var="aliment">
-                        <c:if test="${repa.ID_repas == aliment.ID_repas}">
-                            <c:out value="${aliment.nom}" />,
+                    <c:forEach items="${alimentsrepas}" var="alimentrepa">
+                        <c:if test="${repa.ID_repas == alimentrepa.ID_repas}">
+                            <c:forEach items="${aliments}" var="aliment">
+                                <c:if test="${alimentrepa.ID_aliments == aliment.ID_aliments}">
+                                    <c:out value="${aliment.nom}"/>,
+                                </c:if>
+                            </c:forEach>
+
                         </c:if>
                     </c:forEach>
                 </td>

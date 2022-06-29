@@ -1,0 +1,25 @@
+create table aliments
+(
+    ID_aliments int auto_increment
+        primary key,
+    nom         varchar(255) null
+);
+
+create table repas
+(
+    ID_repas int auto_increment
+        primary key,
+    date     date null,
+    time     time null
+);
+
+create table alimentsrepas
+(
+    ID_repas    int null,
+    ID_aliments int null,
+    constraint FK_aliments
+        foreign key (ID_aliments) references aliments (ID_aliments),
+    constraint FK_repas
+        foreign key (ID_repas) references repas (ID_repas)
+);
+

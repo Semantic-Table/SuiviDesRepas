@@ -7,5 +7,4 @@ import lombok.Data;
 public class Aliments {
     private String nom;
     private int ID_aliments;
-    private int ID_repas;
 }

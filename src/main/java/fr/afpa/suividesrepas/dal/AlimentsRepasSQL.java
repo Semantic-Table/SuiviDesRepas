@@ -1,5 +1,7 @@
 package fr.afpa.suividesrepas.dal;
 
+import fr.afpa.suividesrepas.bo.Aliments;
+import fr.afpa.suividesrepas.bo.AlimentsRepas;
 import fr.afpa.suividesrepas.bo.Repas;
 
 import java.lang.reflect.Array;
@@ -34,5 +36,43 @@ public class AlimentsRepasSQL {
         }
 
         return repas;
+    }
+
+    public void insert(int ID_repas, int ID_aliments){
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(
+
+                    "INSERT INTO alimentsrepas(ID_repas,ID_aliments) VALUES (?,?)"
+            );
+            pstmt.setInt(1,ID_repas);
+            pstmt.setInt(2,ID_aliments);
+            pstmt.executeUpdate();
+            connection.close();
+        } catch (SQLException e) {
+
+        }
+    }
+
+    public ArrayList<AlimentsRepas> selectAll() {
+        ArrayList<AlimentsRepas> alimentsrepas = new ArrayList<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement(
+                    "SELECT ID_aliments , ID_repas from alimentsrepas"
+            );
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                alimentsrepas.add(new AlimentsRepas(
+                        rs.getInt("ID_aliments"),
+                        rs.getInt("ID_repas")
+                ));
+            }
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("alimentrepas");
+        }
+        return alimentsrepas;
     }
 }

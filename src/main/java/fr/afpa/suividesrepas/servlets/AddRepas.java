@@ -1,5 +1,7 @@
 package fr.afpa.suividesrepas.servlets;
 
+import fr.afpa.suividesrepas.bo.Aliments;
+import fr.afpa.suividesrepas.dal.AlimentsRepasSQL;
 import fr.afpa.suividesrepas.dal.AlimentsSQL;
 import fr.afpa.suividesrepas.dal.RepasSQL;
 
@@ -21,6 +23,7 @@ public class AddRepas extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RepasSQL RepasSQL = new RepasSQL();
         AlimentsSQL AlimentsSQL = new AlimentsSQL();
+        AlimentsRepasSQL AlimentsRepasSQL = new AlimentsRepasSQL();
         String[] tabAliments = request.getParameter("aliment").split(",");
 
 
@@ -28,8 +31,14 @@ public class AddRepas extends HttpServlet {
         RepasSQL.insert(request.getParameter("date"), request.getParameter("time"));
         for (String c: tabAliments
         ) {
+
             c.replace(' ','\0');
-            AlimentsSQL.insert(c, RepasSQL.selectOne(request.getParameter("date"), request.getParameter("time")).getID_repas());
+            if (AlimentsSQL.selectOne(c)==null) {
+                AlimentsSQL.insert(c);
+            }
+            System.out.println("idrepas" + RepasSQL.selectOne(request.getParameter("date"), request.getParameter("time")).getID_repas());
+            System.out.println("idaliments" + AlimentsSQL.selectOne(c).getID_aliments());
+            AlimentsRepasSQL.insert(RepasSQL.selectOne(request.getParameter("date"), request.getParameter("time")).getID_repas(),AlimentsSQL.selectOne(c).getID_aliments());
         }
         request.getRequestDispatcher("WEB-INF/afficher.jsp").forward(request, response);
 

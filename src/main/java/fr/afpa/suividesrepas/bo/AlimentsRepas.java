@@ -5,6 +5,6 @@ import lombok.Data;
 
 @Data @AllArgsConstructor
 public class AlimentsRepas {
-    private Aliments aliments;
-    private Repas repas;
+    private int ID_aliments;
+    private int ID_repas;
 }

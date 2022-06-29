@@ -15,7 +15,7 @@ public class RepasSQL {
         try {
             Connection connection = ConnectionProvider.getConnection();
             PreparedStatement pstmt = connection.prepareStatement(
-                    "SELECT repas.date, repas.time, ID_repas from repas"
+                    "SELECT date, time, ID_repas from repas"
             );
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -25,10 +25,10 @@ public class RepasSQL {
                         rs.getInt("ID_repas")
                 ));
             }
-            System.out.println(repas.toString());
             connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            System.out.println("alimentrepas");
         }
         return repas;
     }
