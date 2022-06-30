@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: stagiaire
@@ -20,11 +21,12 @@
 <jsp:include page="nav.jsp"></jsp:include>
 <main>
     <form action="AddRepas" method="post">
+        <h2>remplissez les champs pour ajouter un repas</h2>
         <div class="champ">
             <div class="label">
                 <label for="date">Date:</label>
             </div>
-            <input id="date" name="date" type="date" required>
+            <input id="date" name="date" type="date" required >
         </div>
         <div class="champ">
             <div class="label">
@@ -34,9 +36,9 @@
         </div>
         <div class="champ">
             <div class="label">
-                <label for="repas">Aliments:</label>
+                <label for="repas">Aliments(utiliser la virgule ',' pour séparer vos aliments):</label>
             </div>
-            <input id="repas" name="aliment" type="text" required>
+            <textarea id="repas" name="aliment" required></textarea>
         </div>
         <button type="submit">envoyer</button>
     </form>

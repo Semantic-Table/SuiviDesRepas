@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--
   Created by IntelliJ IDEA.
   User: stagiaire
@@ -19,7 +20,7 @@
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
 <main>
-    <h2>Liste des repas enregistrer :</h2>
+    <h2>Liste des repas enregistrés :</h2>
     <table>
 
         <tr class="tabTitle">
@@ -37,7 +38,7 @@
                         <c:if test="${repa.ID_repas == alimentrepa.ID_repas}">
                             <c:forEach items="${aliments}" var="aliment">
                                 <c:if test="${alimentrepa.ID_aliments == aliment.ID_aliments}">
-                                    <c:out value="${aliment.nom}"/>,
+                                    <c:out value="${aliment.nom}"/>.
                                 </c:if>
                             </c:forEach>
 
