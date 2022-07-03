@@ -17,7 +17,7 @@ public class RepasSQL {
         try {
             Connection connection = ConnectionProvider.getConnection();
             PreparedStatement pstmt = connection.prepareStatement(
-                    "SELECT date, time, ID_repas from repas"
+                    "SELECT date, time, ID_repas from repas ORDER BY date"
             );
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {

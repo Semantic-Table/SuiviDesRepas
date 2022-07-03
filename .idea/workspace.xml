@@ -10,16 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d2d3ec4-31bc-499e-9f26-da888f5711c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/afpa/suividesrepas/exceptions/AfterNowException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/AccueilSuivi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/AjouterSuivi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/ConsulterSuivi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/afpa/suividesrepas/dal/RepasSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/afpa/suividesrepas/dal/RepasSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/afpa/suividesrepas/servlets/AddRepas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/afpa/suividesrepas/servlets/AddRepas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/afficher.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/afficher.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ajouter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ajouter.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +68,18 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marvi\IdeaProjects\SuiviDesRepas\src\main\webapp\img" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -182,6 +190,7 @@
       <updated>1656568950381</updated>
       <workItem from="1656568951802" duration="106000" />
       <workItem from="1656569069982" duration="16792000" />
+      <workItem from="1656847483377" duration="1579000" />
     </task>
     <servers />
   </component>
